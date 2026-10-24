@@ -46,6 +46,8 @@ from ares.consts import (
 )
 from ares.dicts.structure_to_building_size import STRUCTURE_TO_BUILDING_SIZE
 
+import time
+
 
 class BuildOrderRunner:
     """
@@ -133,7 +135,7 @@ class BuildOrderRunner:
                 f"Trying to parse an opening called {opening_name} but "
                 f"I can't find it. Spelling perhaps?"
             )
-
+            print(config[BUILDS])
             build: list[str | dict] = config[BUILDS][opening_name][OPENING_BUILD_ORDER]
             logger.info(
                 f"{self.ai.time_formatted}: Running build from yml file: {opening_name}"
